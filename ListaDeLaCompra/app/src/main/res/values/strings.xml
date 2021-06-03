@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Lista de la compra</string>
+    <string name="home">Home</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="productes">Productes</string>
+    <string name="carro">Carro de la compra</string>
+
+    <string name="menjar_nom">Nom producte</string>
+    <string name="menjar_descripcio">Descripció producte</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="list_view">Llista productes</string>
+
+    <string name="check_toast">Producte seleccionat </string>
+    <string name="_0">0</string>
+    <string name="avatar">TODO</string>
+    <string name="cero">0</string>
+
+
+</resources>

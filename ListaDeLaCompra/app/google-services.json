@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "909462076976",
+    "firebase_url": "https://lista-compra-6af50-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "lista-compra-6af50",
+    "storage_bucket": "lista-compra-6af50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909462076976:android:31ae2d94ab285c3f2277f5",
+        "android_client_info": {
+          "package_name": "com.example.listacompra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909462076976-l000gg2tg3cb54ej563iq3aba0mloj3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCee8B_Oki6rPZNA0wwgyu4iLrGqbXUJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909462076976-l000gg2tg3cb54ej563iq3aba0mloj3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909462076976:android:4f348331ef85c3dc2277f5",
+        "android_client_info": {
+          "package_name": "com.example.listadelacompra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909462076976-l000gg2tg3cb54ej563iq3aba0mloj3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCee8B_Oki6rPZNA0wwgyu4iLrGqbXUJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909462076976-l000gg2tg3cb54ej563iq3aba0mloj3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
