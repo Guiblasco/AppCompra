@@ -1,6 +1,7 @@
 package com.example.listadelacompra;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import java.util.List;
 public class CustomArrayAdapterCarrito  extends ArrayAdapter<Producte> {
     LayoutInflater layoutInflater;
     List<Producte> llistaProductes;
+    Boolean clicked = false;
 
 
 
@@ -48,6 +51,7 @@ public class CustomArrayAdapterCarrito  extends ArrayAdapter<Producte> {
             // La foto
             holder.setImageView(convertView.findViewById(R.id.producte_avatar));
             holder.setTextViewQuantitat( convertView.findViewById(R.id.quantitat));
+            holder.setLayoutProducte(convertView.findViewById(R.id.fondocarro));
 
             convertView.setTag(holder);
         }
@@ -65,6 +69,22 @@ public class CustomArrayAdapterCarrito  extends ArrayAdapter<Producte> {
 
         // Per gestionar la quantitat des dels botons
         holder.getTextViewQuantitat().setText(String.valueOf(producte.getQuantitat()));
+        RelativeLayout fondoProducteCarro = holder.getLayoutProducte();
+
+        holder.getLayoutProducte().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Sols si està activat el checkbox
+                if(!clicked){
+                    fondoProducteCarro.setBackgroundColor(Color.BLUE);
+                    clicked = true;
+                }
+                else {
+                    fondoProducteCarro.setBackgroundColor(Color.WHITE);
+                    clicked = false;
+                }
+            }
+        });
 
 
 
@@ -75,6 +95,16 @@ public class CustomArrayAdapterCarrito  extends ArrayAdapter<Producte> {
         TextView textViewTitle;
         ImageView foto;
         TextView textViewQuantitat;
+
+        RelativeLayout layoutProducte;
+
+        public RelativeLayout getLayoutProducte() {
+            return layoutProducte;
+        }
+
+        public void setLayoutProducte(RelativeLayout layoutProducte) {
+            this.layoutProducte = layoutProducte;
+        }
 
         public TextView getTextViewQuantitat() {
             return textViewQuantitat;

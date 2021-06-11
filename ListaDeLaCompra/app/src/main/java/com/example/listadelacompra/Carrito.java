@@ -1,13 +1,12 @@
 package com.example.listadelacompra;
 
-import androidx.annotation.ColorInt;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,26 +15,39 @@ import java.util.List;
 public class Carrito extends MainMenu {
 
     ListView listProductes;
-     static List<Producte> llistaProductes;
-
+     static List<Producte> llistaProductesCarrito;
+     RelativeLayout fondoProducte;
+    TextView productName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carrito);
-        llistaProductes = new ArrayList<>();
+        llistaProductesCarrito = new ArrayList<>();
         listProductes = findViewById(R.id.listCarro);
+
         PlenarCarro();
         listProductes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Listener per seleccionar / deseleccionar productes
+                fondoProducte = (RelativeLayout)findViewById(R.id.fondocarro);
+                productName = (TextView) view.findViewById(R.id.producte_nom);
 
-                TextView productName = (TextView) view.findViewById(R.id.producte_nom);
-                String product = llistaProductes.get(position).getNom();
+                if (llistaProductesCarrito.get(position)!= null) {// Select a product
 
-                if (llistaProductes.get(position)!= null) {// Select a product
+                   productName.setTextColor(getResources().getColor(R.color.red));
+                    fondoProducte.setBackgroundColor(Color.CYAN);
 
-                    productName.setTextColor(getResources().getColor(R.color.red));
+
+
+               /*     Log.d("BBB","position "+ position + "nom del producte " + llistaProductesCarrito.get(position).getNom());
+                    llistaProductesCarrito.remove(position);
+                    Log.d("BBB","position "+ position + "nom del producte " + llistaProductesCarrito.get(position).getNom());
+
+
+                    listProductes.setAdapter(new CustomArrayAdapterCarrito(getApplicationContext(), llistaProductesCarrito));*/
+
+
 
                 }
             }
@@ -56,10 +68,10 @@ public class Carrito extends MainMenu {
         for (int i = 0; i < nom.size();i++) {
             Producte p = new Producte(nom.get(i), uni.get(i),foto.get(i));
 
-            llistaProductes.add(p);
+            llistaProductesCarrito.add(p);
         }
 
-        listProductes.setAdapter(new CustomArrayAdapterCarrito(this, llistaProductes));
+        listProductes.setAdapter(new CustomArrayAdapterCarrito(this, llistaProductesCarrito));
 
     }
 }

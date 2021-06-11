@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +49,7 @@ public class CustomArrayAdapterProductes extends ArrayAdapter<Producte> {
             holder.setButtonMes ((Button) convertView.findViewById(R.id.button_plus));
             holder.setButtonMenys ((Button) convertView.findViewById(R.id.button_minus));
             holder.setTextViewQuantitat( convertView.findViewById(R.id.quantitat));
+
 
             convertView.setTag(holder);
         }
@@ -141,6 +143,8 @@ public class CustomArrayAdapterProductes extends ArrayAdapter<Producte> {
         ImageView foto;
         Button buttonMes, buttonMenys;
         TextView textViewQuantitat;
+
+
 
         public Button getButtonMes() {
             return buttonMes;
