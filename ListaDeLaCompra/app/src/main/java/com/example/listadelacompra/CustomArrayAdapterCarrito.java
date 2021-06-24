@@ -69,22 +69,31 @@ public class CustomArrayAdapterCarrito  extends ArrayAdapter<Producte> {
 
         // Per gestionar la quantitat des dels botons
         holder.getTextViewQuantitat().setText(String.valueOf(producte.getQuantitat()));
+
+
         RelativeLayout fondoProducteCarro = holder.getLayoutProducte();
+        TextView title = holder.getTextViewTitle();
 
         holder.getLayoutProducte().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Sols si està activat el checkbox
                 if(!clicked){
+
                     fondoProducteCarro.setBackgroundColor(Color.BLUE);
+                    title.setTextColor(Color.RED);
                     clicked = true;
                 }
                 else {
                     fondoProducteCarro.setBackgroundColor(Color.WHITE);
+                    title.setTextColor(Color.BLACK);
                     clicked = false;
                 }
             }
         });
+
+
+       
 
 
 
